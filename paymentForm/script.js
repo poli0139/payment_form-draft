@@ -6,3 +6,16 @@ document
       .replace(/(.{4})/g, "$1 ")
       .trim();
   });
+
+const monthInput = document.querySelector("#expiryMonth");
+monthInput.addEventListener("input", function (e) {
+  if (monthInput.value > 1) {
+    document.getElementById("expiryYear").focus();
+  }
+});
+const yearInput = document.querySelector("#expiryYear");
+yearInput.addEventListener("input", function (e) {
+  if (yearInput.value.length == 2) {
+    document.querySelector("#securityCode").focus();
+  }
+});

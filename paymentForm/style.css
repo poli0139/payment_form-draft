@@ -24,22 +24,24 @@ header {
   height: 10vh;
 }
 form {
-  border: solid red 1px;
+  /* border: solid red 1px; */
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 40vw;
   margin: auto;
+  margin-top: 10rem;
   row-gap: 2rem;
 }
 label {
   display: flex;
   flex-direction: column;
+  color: #3c100a;
   font-family: "barlow-regular";
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   row-gap: 0.2rem;
 }
 input {
-  height: 2rem;
+  height: 2.5rem;
   border-radius: 5px;
   border: solid 1px #707070;
   font-family: "barlow-light";
@@ -49,8 +51,10 @@ input {
 
 .expiry-security {
   display: flex;
-  column-gap: 2rem;
+  flex-wrap: wrap;
+  column-gap: 3rem;
 }
+
 .expiryDateContainer {
   display: flex;
   flex-direction: column;
@@ -61,7 +65,42 @@ input {
   column-gap: 0.5rem;
   font-size: 2rem;
 }
-.expiryInputs input,
+.expiryInputs input {
+  width: 5rem;
+}
+
 .securityCode input {
   width: 4rem;
+}
+.payButton {
+  width: 40%;
+  margin: auto;
+  margin-top: 2rem;
+  border: none;
+  border-top: solid 2px #3c100a;
+  color: #3c100a;
+  background: transparent;
+  font-family: "barlow-regular";
+  font-size: 2rem;
+}
+/* PSEUDO */
+input:focus {
+  outline: none;
+  box-shadow: 1px 1px 2px #707070;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  form {
+    width: 50vw;
+  }
+
+  .payButton {
+    width: 60%;
+    margin-top: 0;
+  }
 }

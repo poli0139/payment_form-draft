@@ -21,6 +21,8 @@
             required
             autofocus
             placeholder="Ex. John Doe"
+            autocomplete="name"
+            required
           />
         </label>
         <label class="cardNumber">
@@ -28,8 +30,11 @@
           <input
             name="cardNumber"
             type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
             maxlength="19"
             placeholder="1234 5678 9012 3456"
+            required
           />
         </label>
         <div class="expiry-security">
@@ -40,28 +45,37 @@
                 type="number"
                 name="expiryMonth"
                 id="expiryMonth"
-                maxlength="2"
+                min="1"
+                max="12"
                 placeholder="MM"
+                required
               />
               <span>/</span>
               <input
                 type="number"
+                id="expiryYear"
                 name="expiryYear"
                 maxlength="2"
                 placeholder="YY"
+                required
               />
             </div>
           </div>
           <label class="securityCode">
             Security Code
             <input
-              type="number"
+              id="securityCode"
+              type="text"
               name="securityCode"
+              pattern="[0-9]*"
+              inputmode="numeric"
               maxlength="3"
               placeholder="123"
+              required
             />
           </label>
         </div>
+        <button class="payButton">Complete order</button>
       </form>
     </main>
     <script src="script.js"></script>
