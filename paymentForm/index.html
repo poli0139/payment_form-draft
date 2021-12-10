@@ -25,31 +25,40 @@
             required
           />
         </label>
-        <label class="cardNumber">
-          Card Number
-          <input
-            name="cardNumber"
-            type="text"
-            pattern="[0-9]*"
-            inputmode="numeric"
-            maxlength="19"
-            placeholder="1234 5678 9012 3456"
-            required
-          />
-        </label>
+        <div class="cardNumberDiv">
+          <label class="cardNumber">
+            Card Number
+            <input
+              id="cardNumber"
+              name="cardNumber"
+              type="text"
+              inputmode="numeric"
+              minlength="19"
+              maxlength="19"
+              placeholder="1234 5678 9012 3456"
+              required
+            />
+          </label>
+          <p class="errorMessage cardNumberErrMessage">Invalid card number</p>
+        </div>
         <div class="expiry-security">
           <div class="expiryDateContainer">
             <label class="expiryDate" for="expiryMonth"> Expiry Date</label>
             <div class="expiryInputs">
-              <input
-                type="number"
-                name="expiryMonth"
-                id="expiryMonth"
-                min="1"
-                max="12"
-                placeholder="MM"
-                required
-              />
+              <div class="expiryMonthDiv">
+                <input
+                  type="number"
+                  name="expiryMonth"
+                  id="expiryMonth"
+                  min="1"
+                  max="12"
+                  placeholder="MM"
+                  required
+                />
+                <p class="monthErrMessage errorMessage">
+                  The month is not valid
+                </p>
+              </div>
               <span>/</span>
               <input
                 type="number"

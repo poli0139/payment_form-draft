@@ -75,6 +75,7 @@ input {
 .payButton {
   width: 40%;
   margin: auto;
+  cursor: pointer;
   margin-top: 2rem;
   border: none;
   border-top: solid 2px #3c100a;
@@ -83,6 +84,33 @@ input {
   font-family: "barlow-regular";
   font-size: 2rem;
 }
+p {
+  font-size: 0.8rem;
+}
+.monthErrMessage {
+  width: 5rem;
+}
+.errorMessage {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+.animateMessage {
+  animation: showMessage;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showMessage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 /* PSEUDO */
 input:focus {
   outline: none;
@@ -102,5 +130,10 @@ input::-webkit-inner-spin-button {
   .payButton {
     width: 60%;
     margin-top: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  form {
+    width: 80vw;
   }
 }
